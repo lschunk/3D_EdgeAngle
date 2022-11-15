@@ -1,0 +1,15 @@
+section,angel_number,dist to origin on curve [mm],segment on section [mm],angle 1 (3-points) [degree],angle 2 (2-constructed-lines) [degree],angle 3 (2-BestFit-lines) [degree]
+WEM-60_1_E1_RE_SEC-09_local,1,1.0,1.0,76.5,61.0,62.3
+WEM-60_1_E1_RE_SEC-09_local,2,2.0,1.0,69.8,55.8,54.2
+WEM-60_1_E1_RE_SEC-09_local,3,3.0,1.0,66.4,66.0,67.5
+WEM-60_1_E1_RE_SEC-09_local,4,4.0,1.0,65.5,60.1,61.1
+WEM-60_1_E1_RE_SEC-09_local,5,5.0,1.0,63.5,50.7,54.7
+WEM-60_1_E1_RE_SEC-09_local,6,6.0,1.0,64.3,76.3,79.5
+WEM-60_1_E1_RE_SEC-09_local,7,7.0,1.0,63.0,54.7,52.0
+WEM-60_1_E1_RE_SEC-09_local,8,8.0,1.0,63.1,62.8,63.2
+WEM-60_1_E1_RE_SEC-09_local,9,9.0,1.0,63.1,63.3,62.2
+WEM-60_1_E1_RE_SEC-09_local,10,10.0,1.0,62.2,63.4,63.4
+WEM-60_1_E1_RE_SEC-09_local,11,11.0,1.0,62.6,56.5,60.0
+WEM-60_1_E1_RE_SEC-09_local,12,12.0,1.0,62.1,62.3,59.8
+WEM-60_1_E1_RE_SEC-09_local,13,13.0,1.0,62.1,59.0,60.6
+WEM-60_1_E1_RE_SEC-09_local,14,14.0,1.0,61.9,54.6,55.8

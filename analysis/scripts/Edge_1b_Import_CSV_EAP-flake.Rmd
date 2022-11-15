@@ -1,0 +1,148 @@
+---
+title: "Edge angle project"
+subtitle: "Import and format CSVs from GOM Inspect scripts"
+author: "Ivan Calandra, Lisa Schunk"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    df_print: paged
+    toc: true
+    toc_depth: 3
+    toc_float: true
+    number_sections: true
+    
+---
+
+
+```{r Knitr Options, include=FALSE}
+	knitr::opts_chunk$set(comment = NA, message = FALSE, indent="", error = TRUE)
+```
+
+---
+
+
+# Goal of the script
+This script reads all CSV files exported from the GOM Inspect scripts, and imports them into one single CSV file and one single R file.  
+The script will:
+
+1. Read in the original CSV-files and put them together (step #3)  
+2. Write an XLSX-file and save an R object ready for further analysis in R (step #4)
+
+---
+
+```{r}
+dir_in <- "analysis/raw_data/EAP-flake"
+dir_out <- "analysis/derived_data/"
+
+```
+
+Raw data must be located in `r paste0("~/", dir_in)`.  
+Formatted data will be saved in `r paste0("~/", dir_out)`.
+
+The knit directory for this script is the project directory.
+
+
+---
+
+# Load packages
+```{r Libraries}
+pack_to_load <- c("openxlsx", "R.utils")
+sapply(pack_to_load, library, character.only = TRUE, logical.return = TRUE)
+
+```
+
+
+# Read in original CSV-files
+## List all CSV-files
+```{r}
+Angles <- list.files(dir_in, pattern = "_w_.*\\.csv$", full.names = TRUE)
+Angles.infos <- vector(mode = "list", length = length(Angles))
+for (i in seq_along(Angles.infos)){
+  Angles.infos[[i]] <- file.info(Angles[i])
+}
+
+Angles.infos <- do.call(rbind, Angles.infos)
+Angles.infos <- data.frame(file = basename(row.names(Angles.infos)), Angles.infos)
+
+```
+
+
+# Read in the CSV-files
+```{r}
+Angles.data <- vector(mode = "list", length = length(Angles))
+for (i in seq_along(Angles.data)){
+  Angles.data[[i]] <- read.csv(Angles[i])
+  Angles.data[[i]][["steps"]] <- Angles.data[[i]][2,3] - Angles.data[[i]][1,3]
+}
+Angles.data <- do.call(rbind, Angles.data)
+names(Angles.data) <- c("section", "angle_number", "dist_intersection", "segment_length", "3points", "2lines", "best_fit", "steps")
+Angles.data <- Angles.data[c(1:2, 8, 3:7)]
+str(Angles.data)
+
+```
+
+
+# Extract units of all variables
+The units are based on the first CSV-file.
+Units are incorporated to the data object `Angles.data` as comments.
+
+```{r}
+headers <- unlist(strsplit(readLines(Angles[1], n = 1), ","))
+units.var <- sub(pattern = ".*\\[(.+)\\]", "\\1", headers)[-(1:2)]
+units.var <- c(rep(units.var[1],2), units.var[-1])
+names(units.var) <- names(Angles.data)[-(1:2)]
+comment(Angles.data) <- units.var
+units.var.table <- data.frame(variable = names(units.var), unit = units.var)
+
+```
+
+
+---
+
+
+# Save data
+## Format name of output file
+```{r}
+file_out <- "EAP-flake"
+
+```
+The files will be saved as "`r paste0("~/", file_out, ".[ext]")`".
+
+
+## Write to XLSX
+```{r}
+write.xlsx(list(data = Angles.data, units = units.var.table, CSV_infos = Angles.infos), 
+           file = paste0(dir_out, file_out, ".xlsx"))
+
+```
+
+
+## Save R object
+```{r}
+saveObject(Angles.data, file = paste0(dir_out, file_out, ".Rbin"))
+
+```
+
+---
+
+# sessionInfo() and RStudio version
+
+```{r}
+sessionInfo()
+
+```
+
+RStudio version `r readLines("analysis/scripts/RStudioVersion.txt", n = 1)`.
+
+
+# Cite R packages used
+```{r Citation}
+for (i in pack_to_load) print(citation(i), bibtex = FALSE)
+
+```
+
+
+---
+
+
+END OF SCRIPT

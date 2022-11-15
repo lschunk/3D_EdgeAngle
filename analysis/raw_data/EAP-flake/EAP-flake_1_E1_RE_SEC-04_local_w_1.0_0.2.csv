@@ -1,0 +1,16 @@
+section,angel_number,dist to origin on curve [mm],segment on section [mm],angle 1 (3-points) [degree],angle 2 (2-constructed-lines) [degree],angle 3 (2-BestFit-lines) [degree]
+EAP-flake_1_E1_RE_SEC-04_local,1,1.0,0.2,86.9,70.2,90.1
+EAP-flake_1_E1_RE_SEC-04_local,2,2.0,0.2,72.0,37.2,38.7
+EAP-flake_1_E1_RE_SEC-04_local,3,3.0,0.2,59.7,31.4,32.3
+EAP-flake_1_E1_RE_SEC-04_local,4,4.0,0.2,52.2,31.8,40.4
+EAP-flake_1_E1_RE_SEC-04_local,5,5.0,0.2,47.7,34.8,40.5
+EAP-flake_1_E1_RE_SEC-04_local,6,6.0,0.2,44.7,29.5,28.9
+EAP-flake_1_E1_RE_SEC-04_local,7,7.0,0.2,43.1,35.2,40.6
+EAP-flake_1_E1_RE_SEC-04_local,8,8.0,0.2,42.4,37.6,32.6
+EAP-flake_1_E1_RE_SEC-04_local,9,9.0,0.2,39.5,26.3,164.2
+EAP-flake_1_E1_RE_SEC-04_local,10,10.0,0.2,34.3,15.3,157.1
+EAP-flake_1_E1_RE_SEC-04_local,11,11.0,0.2,29.8,4.6,5.3
+EAP-flake_1_E1_RE_SEC-04_local,12,12.0,0.2,26.4,7.6,2.3
+EAP-flake_1_E1_RE_SEC-04_local,13,13.0,0.2,23.5,11.9,11.9
+EAP-flake_1_E1_RE_SEC-04_local,14,14.0,0.2,21.0,6.3,11.1
+EAP-flake_1_E1_RE_SEC-04_local,15,15.0,0.2,19.0,12.4,11.5
