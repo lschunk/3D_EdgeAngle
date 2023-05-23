@@ -4,4 +4,4 @@ The first analysis was done in R. The scripts format and sort the data acquired 
 
 The second analysis was done in Python (files named "EdgeAngles". The script deals with the statistical analysis of the acquired data. 
 
-Contributors: [![ORCID ID](http://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png)](http://orcid.org/0000-0003-3816-6359) Ivan Calandra, [![ORCID ID](https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png)](http://orcid.org/0000-0002-1929-9829) konstantin Bob, [![ORCID ID](https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png)](http://orcid.org/0000-0002-2193-7340) Lisa Schunk
+Contributors: [![ORCID ID](http://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png)](http://orcid.org/0000-0003-3816-6359) Ivan Calandra, [![ORCID ID](https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png)](http://orcid.org/0000-0002-1929-9829) Konstantin Bob, [![ORCID ID](https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png)](http://orcid.org/0000-0002-2193-7340) Lisa Schunk
